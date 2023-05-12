@@ -10,17 +10,18 @@ const Product = ({ data, id }) => {
       <div className="thumbnail">
         <img
           alt=""
-          style={{height:"-webkit-fill-available"}}
+          style={{ height: "-webkit-fill-available" }}
           src={
-            process.env.REACT_APP_STRIPE_APP_DEV_URL +
-            (data?.img?.data !== null ? data?.img?.data[0]?.attributes?.url : null)
+            data?.img?.data !== null
+              ? data?.img?.data[0]?.attributes?.url
+              : null
           }
         />
       </div>
       <div className="prod-details">
         <span className="name">{data.title}</span>
         <span className="price">&#8377;{data.price}</span>
-      </div> 
+      </div>
     </div>
   );
 };
